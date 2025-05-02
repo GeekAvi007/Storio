@@ -2,6 +2,8 @@ import { Button } from "@heroui/button";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 import { Card, CardBody } from "@heroui/card";
+import { ShimmerButton } from "@/components/magicui/shimmer-button";
+import { DotPattern } from "@/components/magicui/dot-pattern";
 import {
   CloudUpload,
   Shield,
@@ -13,7 +15,7 @@ import Navbar from "@/components/Navbar";
 import { IconCloudDemo } from "@/components/ui/ICD";
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-default-50">
+    <div className="min-h-screen flex flex-col">
       {/* Use the unified Navbar component */}
       <Navbar />
 
@@ -49,14 +51,7 @@ export default function Home() {
                   </SignedOut>
                   <SignedIn>
                     <Link href="/dashboard">
-                      <Button
-                        size="lg"
-                        variant="solid"
-                        color="primary"
-                        endContent={<ArrowRight className="h-4 w-4" />}
-                      >
-                        Go to Dashboard
-                      </Button>
+<ShimmerButton>Go To Dashboard</ShimmerButton>
                     </Link>
                   </SignedIn>
 
@@ -74,7 +69,7 @@ export default function Home() {
         </section>
 
         {/* Features section */}
-        <section className="py-12 md:py-16 px-4 md:px-6 bg-default-50">
+        <section className="py-12 md:py-16 px-4 md:px-6 ">
           <div className="container mx-auto">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-default-900">
@@ -83,7 +78,7 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-              <Card className="border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="border border-default-200  shadow-sm hover:shadow-md transition-shadow">
                 <CardBody className="p-6 text-center">
                   <CloudUpload className="h-10 md:h-12 w-10 md:w-12 mx-auto mb-4 text-primary" />
                   <h3 className="text-lg md:text-xl font-semibold mb-2 text-default-900">
@@ -93,7 +88,7 @@ export default function Home() {
                 </CardBody>
               </Card>
 
-              <Card className="border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="border border-default-200  shadow-sm hover:shadow-md transition-shadow">
                 <CardBody className="p-6 text-center">
                   <Folder className="h-10 md:h-12 w-10 md:w-12 mx-auto mb-4 text-primary" />
                   <h3 className="text-lg md:text-xl font-semibold mb-2 text-default-900">
@@ -105,7 +100,7 @@ export default function Home() {
                 </CardBody>
               </Card>
 
-              <Card className="border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow sm:col-span-2 md:col-span-1 mx-auto sm:mx-0 max-w-md sm:max-w-full">
+              <Card className="border border-default-200  shadow-sm hover:shadow-md transition-shadow sm:col-span-2 md:col-span-1 mx-auto sm:mx-0 max-w-md sm:max-w-full">
                 <CardBody className="p-6 text-center">
                   <Shield className="h-10 md:h-12 w-10 md:w-12 mx-auto mb-4 text-primary" />
                   <h3 className="text-lg md:text-xl font-semibold mb-2 text-default-900">
@@ -121,7 +116,7 @@ export default function Home() {
         </section>
 
         {/* CTA section */}
-        <section className="py-12 md:py-20 px-4 md:px-6 bg-default-50">
+        <section className="py-12 md:py-20 px-4 md:px-6 ">
           <div className="container mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-default-900">
               Ready?
@@ -157,7 +152,7 @@ export default function Home() {
       </main>
 
       {/* Simple footer */}
-      <footer className="bg-default-50 border-t border-default-200 py-4 md:py-6">
+      <footer className=" border-t border-default-200 py-4 md:py-6">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
@@ -172,5 +167,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
+  
   );
 }

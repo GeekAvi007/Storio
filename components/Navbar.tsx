@@ -129,7 +129,7 @@ export default function Navbar({ user }: NavbarProps) {
 
   return (
     <header
-      className={`bg-default-50 border-b border-default-200 sticky top-0 z-50 transition-shadow ${isScrolled ? "shadow-sm" : ""}`}
+      className={` border-b border-default-200 sticky top-0 z-50 transition-shadow ${isScrolled ? "shadow-sm" : ""}`}
     >
       <div className="container mx-auto py-3 md:py-4 px-4 md:px-6">
         <div className="flex justify-between items-center">
@@ -253,7 +253,7 @@ export default function Navbar({ user }: NavbarProps) {
           {/* Mobile Menu */}
           <div
             ref={mobileMenuRef}
-            className={`fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-default-50 z-40 flex flex-col pt-20 px-6 shadow-xl transition-transform duration-300 ease-in-out ${
+            className={`fixed top-0 right-0 bottom-0 w-4/5 max-w-sm z-40 flex flex-col pt-20 px-6 shadow-xl transition-transform duration-300 ease-in-out ${
               isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
             } md:hidden`}
           >
