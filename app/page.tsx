@@ -10,7 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
-
+import { IconCloudDemo } from "@/components/ui/ICD";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-default-50">
@@ -42,7 +42,7 @@ export default function Home() {
                       </Button>
                     </Link>
                     <Link href="/sign-in">
-                      <Button size="lg" variant="flat" color="primary">
+                      <Button size="lg" variant="flat" color="secondary">
                         Sign In
                       </Button>
                     </Link>
@@ -59,15 +59,14 @@ export default function Home() {
                       </Button>
                     </Link>
                   </SignedIn>
+
                 </div>
               </div>
 
               <div className="flex justify-center order-first lg:order-last">
                 <div className="relative w-64 h-64 md:w-80 md:h-80">
                   <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <ImageIcon className="h-24 md:h-32 w-24 md:w-32 text-primary/70" />
-                  </div>
+                    <IconCloudDemo />
                 </div>
               </div>
             </div>
@@ -166,7 +165,8 @@ export default function Home() {
               <h2 className="text-lg font-bold">Storio</h2>
             </div>
             <p className="text-default-500 text-sm">
-              &copy; {new Date().getFullYear()} Storio @Cloud Storage by Avishek with 💖
+              &copy; {new Date().getFullYear()} Storio @Cloud Storage by Avishek
+              with 💖
             </p>
           </div>
         </div>
