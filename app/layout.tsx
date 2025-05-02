@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Droply",
-  description: "Secure cloud storage for your images, powered by ImageKit",
+  title: "Storio 🚀",
+  description: "Wanna Store but want a light bucket ?",
 };
 
 export default function RootLayout({
