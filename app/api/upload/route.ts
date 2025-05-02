@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
       path: imagekit.filePath || `/droply/${userId}/${imagekit.name}`,
       size: imagekit.size || 0,
       type: imagekit.fileType || "image",
-      fileUrl: imagekit.url,
+      file_url: imagekit.url,
       thumbnailUrl: imagekit.thumbnailUrl || null,
       userId: userId,
       parentId: null, // Root level by default
