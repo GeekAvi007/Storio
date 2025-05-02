@@ -46,8 +46,8 @@ export async function DELETE(
       try {
         let imagekitFileId = null;
 
-        if (file.fileUrl) {
-          const urlWithoutQuery = file.fileUrl.split("?")[0];
+        if (file.file_url) {
+          const urlWithoutQuery = file.file_url.split("?")[0];
           imagekitFileId = urlWithoutQuery.split("/").pop();
         }
 
