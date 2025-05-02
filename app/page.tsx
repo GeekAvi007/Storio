@@ -166,7 +166,7 @@ export default function Home() {
               <h2 className="text-lg font-bold">Storio</h2>
             </div>
             <p className="text-default-500 text-sm">
-              &copy; {new Date().getFullYear()} Storio
+              &copy; {new Date().getFullYear()} Storio @Cloud Storage by Avishek with 💖
             </p>
           </div>
         </div>
