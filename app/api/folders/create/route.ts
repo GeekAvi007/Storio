@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
       path: `/folders/${userId}/${uuidv4()}`,
       size: 0,
       type: "folder",
-      fileUrl: "",
+      file_url: "",
       thumbnailUrl: null,
       userId,
       parentId,
