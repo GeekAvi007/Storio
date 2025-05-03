@@ -3,7 +3,7 @@ import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 import { Card, CardBody } from "@heroui/card";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
-import { DotPattern } from "@/components/magicui/dot-pattern";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import {
   CloudUpload,
   Shield,
@@ -11,60 +11,59 @@ import {
   Image as ImageIcon,
   ArrowRight,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
+import { NavbarDemo } from "@/components/Navbar";
 import { IconCloudDemo } from "@/components/ui/ICD";
+import { BentoDemo } from "@/components/Bento";
+import { AuroraText } from "@/components/magicui/aurora-text";
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Use the unified Navbar component */}
-      <Navbar />
 
       {/* Main content */}
-      <main className="flex-1">
+      <main className="flex-1 ">
+        <NavbarDemo />
         {/* Hero section */}
-        <section className="py-12 md:py-20 px-4 md:px-6">
+        <section className="flex flex-col py-10 md:py-20 px-4 md:px-6">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div className="space-y-6 text-center lg:text-left">
-                <div>
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-default-900 leading-tight">
-                    Store your <span className="text-primary">images</span> with
-                    ease
-                  </h1>
-                  <p className="text-lg md:text-xl text-default-600">
-                    Simple. Secure. Fast.
-                  </p>
-                </div>
+              <section className="h-[15rem] flex flex-col items-center justify-center px-4 md:px-6 bg-background">
+                <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
+                  Store <AuroraText>Seamlessly!</AuroraText>
+                </h1>
 
-                <div className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
+                <div className="mt-8 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
                   <SignedOut>
                     <Link href="/sign-up">
-                      <Button size="lg" variant="solid" color="primary">
+                      <button className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
                         Get Started
-                      </Button>
+                      </button>
                     </Link>
                     <Link href="/sign-in">
-                      <Button size="lg" variant="flat" color="secondary">
+                      <button className="w-40 h-10 rounded-xl bg-white text-black border border-black text-sm">
                         Sign In
-                      </Button>
+                      </button>
                     </Link>
                   </SignedOut>
                   <SignedIn>
                     <Link href="/dashboard">
-<ShimmerButton>Go To Dashboard</ShimmerButton>
+                      <ShimmerButton className="w-40 h-10">
+                        Go To Dashboard
+                      </ShimmerButton>
                     </Link>
                   </SignedIn>
-
                 </div>
-              </div>
+              </section>
 
               <div className="flex justify-center order-first lg:order-last">
                 <div className="relative w-64 h-64 md:w-80 md:h-80">
                   <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl"></div>
-                    <IconCloudDemo />
+                  <IconCloudDemo />
                 </div>
               </div>
             </div>
+            <BentoDemo />
           </div>
         </section>
 
@@ -167,6 +166,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  
   );
 }

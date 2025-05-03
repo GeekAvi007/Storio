@@ -2,7 +2,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import DashboardContent from "@/components/DashboardContent";
 import { CloudUpload, Database } from "lucide-react";
-import Navbar from "@/components/Navbar";
+import { NavbarDemo } from "@/components/Navbar";
 
 export default async function Dashboard() {
   const { userId } = await auth();
@@ -26,7 +26,7 @@ export default async function Dashboard() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar user={serializedUser} />
+      <NavbarDemo user={serializedUser} />
 
       <main className="flex-1 container mx-auto py-8 px-6">
         <DashboardContent
