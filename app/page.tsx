@@ -48,9 +48,9 @@ export default function Home() {
                   </SignedOut>
                   <SignedIn>
                     <Link href="/dashboard">
-                      <ShimmerButton className="w-40 h-10">
+                    <button className="w-40 h-10 rounded-xl bg-white text-black border border-black text-sm">
                         Go To Dashboard
-                      </ShimmerButton>
+                        </button>
                     </Link>
                   </SignedIn>
                 </div>
