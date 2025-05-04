@@ -15,7 +15,7 @@ import { IconCloudDemo } from "@/components/ui/ICD";
 import { BentoDemo } from "@/components/Bento";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
-export const projects = [
+const projects = [
   {
     title: "Secure Storage",
     description:
