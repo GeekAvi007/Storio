@@ -83,7 +83,9 @@ export function NavbarDemo({ user }: NavbarProps) {
             <SignedIn>
               {!isOnDashboard && (
                 <Link href="/dashboard">
-                  <NavbarButton variant="secondary">Dashboard</NavbarButton>
+                  <button className="w-40 h-10 rounded-xl bg-black text-white border border-blue- text-sm">
+                        Dashboard
+                      </button>
                 </Link>
               )}
               <Dropdown>

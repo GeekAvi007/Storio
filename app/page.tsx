@@ -1,20 +1,38 @@
 import { Button } from "@heroui/button";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
-import { Card, CardBody } from "@heroui/card";
-import { ShimmerButton } from "@/components/magicui/shimmer-button";
-import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
 import {
   CloudUpload,
   Shield,
   Folder,
   Image as ImageIcon,
   ArrowRight,
+  Database,
 } from "lucide-react";
 import { NavbarDemo } from "@/components/Navbar";
 import { IconCloudDemo } from "@/components/ui/ICD";
 import { BentoDemo } from "@/components/Bento";
 import { AuroraText } from "@/components/magicui/aurora-text";
+import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
+export const projects = [
+  {
+    title: "Secure Storage",
+    description:
+      "All your files are encrypted both in transit and at rest, ensuring complete data privacy and protection.",
+  },
+  {
+    title: "Instant Sharing",
+    description:
+      "Easily generate secure, shareable links to files and folders with custom access permissions.",
+  },
+  {
+    title: "Cross-Device Sync",
+    description:
+      "Seamlessly access and sync your files across mobile, desktop, and web platforms in real-time.",
+  },
+];
+
 
 export default function Home() {
   return (
@@ -28,7 +46,7 @@ export default function Home() {
         <section className="flex flex-col py-10 md:py-20 px-4 md:px-6">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-              <section className="h-[15rem] flex flex-col items-center justify-center px-4 md:px-6 bg-background">
+              <section className="h-[15rem] flex flex-col items-center  px-4 md:px-6 bg-background">
                 <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
                   Store <AuroraText>Seamlessly!</AuroraText>
                 </h1>
@@ -48,16 +66,16 @@ export default function Home() {
                   </SignedOut>
                   <SignedIn>
                     <Link href="/dashboard">
-                    <button className="w-40 h-10 rounded-xl bg-white text-black border border-black text-sm">
+                      <button className="w-40 h-10 rounded-xl bg-white text-black border border-black text-sm">
                         Go To Dashboard
-                        </button>
+                      </button>
                     </Link>
                   </SignedIn>
                 </div>
               </section>
 
               <div className="flex justify-center order-first lg:order-last">
-                <div className="relative w-64 h-64 md:w-80 md:h-80">
+                <div className="relative w-80 h-80 md:w-80 md:h-80">
                   <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl"></div>
                   <IconCloudDemo />
                 </div>
@@ -68,54 +86,44 @@ export default function Home() {
         </section>
 
         {/* Features section */}
-        <section className="py-12 md:py-16 px-4 md:px-6 ">
+
+        <section className="py-20 md:py-24 px-4 md:px-6">
+       
+
+            
           <div className="container mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-default-900">
-                What You Get
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-              <Card className="border border-default-200  shadow-sm hover:shadow-md transition-shadow">
-                <CardBody className="p-6 text-center">
-                  <CloudUpload className="h-10 md:h-12 w-10 md:w-12 mx-auto mb-4 text-primary" />
-                  <h3 className="text-lg md:text-xl font-semibold mb-2 text-default-900">
-                    Quick Uploads
+          <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-default-900">
+            What's For you?
+          </h2>
+        </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {projects.map((project) => (
+                <div
+                  key={project.title}
+                  className="bg-white/5 border border-white/10 rounded-xl p-6 shadow-xl backdrop-blur-md transition-transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <h3 className="text-xl font-bold text-white">
+                    {project.title}
                   </h3>
-                  <p className="text-default-600">Drag, drop, done.</p>
-                </CardBody>
-              </Card>
-
-              <Card className="border border-default-200  shadow-sm hover:shadow-md transition-shadow">
-                <CardBody className="p-6 text-center">
-                  <Folder className="h-10 md:h-12 w-10 md:w-12 mx-auto mb-4 text-primary" />
-                  <h3 className="text-lg md:text-xl font-semibold mb-2 text-default-900">
-                    Smart Organization
-                  </h3>
-                  <p className="text-default-600">
-                    Keep it tidy, find it fast.
+                  <p className="text-white/70 text-sm mt-2">
+                    {project.description}
                   </p>
-                </CardBody>
-              </Card>
-
-              <Card className="border border-default-200  shadow-sm hover:shadow-md transition-shadow sm:col-span-2 md:col-span-1 mx-auto sm:mx-0 max-w-md sm:max-w-full">
-                <CardBody className="p-6 text-center">
-                  <Shield className="h-10 md:h-12 w-10 md:w-12 mx-auto mb-4 text-primary" />
-                  <h3 className="text-lg md:text-xl font-semibold mb-2 text-default-900">
-                    Locked Down
-                  </h3>
-                  <p className="text-default-600">
-                    Your images, your eyes only.
-                  </p>
-                </CardBody>
-              </Card>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-block text-sm text-[#00FFF1] hover:underline"
+                  >
+                    Visit
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* CTA section */}
-        <section className="py-12 md:py-20 px-4 md:px-6 ">
+        {/* <section className="py-12 md:py-20 px-4 md:px-6 ">
           <div className="container mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-default-900">
               Ready?
@@ -147,15 +155,15 @@ export default function Home() {
               </Link>
             </SignedIn>
           </div>
-        </section>
-      </main>
+        </section>*/}
+      </main> 
 
       {/* Simple footer */}
       <footer className=" border-t border-default-200 py-4 md:py-6">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <CloudUpload className="h-5 w-5 text-primary" />
+              <Database />
               <h2 className="text-lg font-bold">Storio</h2>
             </div>
             <p className="text-default-500 text-sm">
